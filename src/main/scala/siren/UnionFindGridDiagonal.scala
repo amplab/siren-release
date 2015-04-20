@@ -1,4 +1,4 @@
-package snap
+package siren
 
 import it.unimi.dsi.fastutil.longs.LongList
 import it.unimi.dsi.fastutil.longs.LongArrayList

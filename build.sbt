@@ -1,4 +1,4 @@
-name := "SiRen"
+name := "siren"
 
 version := "0.0"
 

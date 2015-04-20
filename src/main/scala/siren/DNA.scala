@@ -1,4 +1,4 @@
-package snap
+package siren
 
 /**
  * Utilities for manipulating DNA strings.

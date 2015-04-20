@@ -1,4 +1,4 @@
-package snap
+package siren
 
 import java.util.Arrays
 import scala.math.abs

@@ -1,4 +1,4 @@
-package snap
+package siren
 
 import scala.math._
 

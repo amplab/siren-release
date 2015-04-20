@@ -1,4 +1,4 @@
-package snap
+package siren
 import scala.io.Source
 import scala.collection.mutable.ArrayBuffer
 import java.io.BufferedOutputStream

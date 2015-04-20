@@ -1,6 +1,5 @@
-package snap.apps
+package siren
 
-import snap._
 import it.unimi.dsi.fastutil.longs.LongList
 import it.unimi.dsi.fastutil.longs.LongArrayList
 import org.apache.spark.SparkContext

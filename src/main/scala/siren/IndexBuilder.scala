@@ -1,4 +1,4 @@
-package snap
+package siren
 
 abstract class IndexBuilder(val seedLen: Int) {
   /** Add an entry to the index */

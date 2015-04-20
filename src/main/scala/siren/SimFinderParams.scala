@@ -1,4 +1,4 @@
-package snap
+package siren
 
 abstract class SimFinderParams(seedLenStr: String, readLenStr: String, numSeedsStr: String, unionDistStr: String, outFile: String) extends Serializable {
   val seedLen = seedLenStr.toInt

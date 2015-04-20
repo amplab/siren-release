@@ -1,4 +1,4 @@
-package snap
+package siren
 import scala.collection.mutable.HashMap
 import scala.collection.mutable.ArrayBuffer
 import scala.math.{max, min}

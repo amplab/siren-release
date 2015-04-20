@@ -1,4 +1,4 @@
-package snap
+package siren
 
 class SAMEntry(
     val readId: String,

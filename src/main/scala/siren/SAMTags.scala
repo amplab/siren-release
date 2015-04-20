@@ -1,4 +1,4 @@
-package snap
+package siren
 
 case class SAMTag(tagName: String, tagType: String, value: String) {
   override def toString = tagName + ":" + tagType + ":" + value
