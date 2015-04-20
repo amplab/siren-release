@@ -1,0 +1,8 @@
+#!/bin/bash
+
+export SIREN_HOME=$(cd "$(dirname $0)/.."; pwd)
+
+MEMORY=${SBT_MEM:-55g}
+
+java -Xmx${MEMORY} -Xms${MEMORY} -XX:MaxInlineSize=100 -XX:FreqInlineSize=100 -XX:MaxPermSize=150m \
+  -XX:+UseCompressedOops -XX:+UseConcMarkSweepGC $EXTRA_ARGS -jar $SIREN_HOME/sbt/sbt-launch-*.jar "$@"
