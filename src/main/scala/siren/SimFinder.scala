@@ -33,7 +33,7 @@ object SimFinder {
 
         val partitionStarts = rangeStarts.map(i => List(i).padTo(rangeStarts.length, i).zip(rangeStarts)).flatten
         var ufClusters = new UnionFindL(numBases) // must use "L" here b/c we're dealing with whole genome
-        val sc = new SparkContext(getSparkDest(master), "SimFinder", "", Seq("target/scala-2.9.2/snap_2.9.2-0.0.jar"))
+        val sc = new SparkContext(getSparkDest(master), "SimFinder", "", Seq("target/scala-2.9.3/siren_2.9.3-0.0.jar"))
         val ufAccumulator = sc.accumulator(ufClusters.asInstanceOf[UnionFindAbstract])(UnionFindAP)
 
         sc.parallelize(partitionStarts, partitionStarts.size).foreach(p => {
