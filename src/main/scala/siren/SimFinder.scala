@@ -154,16 +154,7 @@ object SimFinder {
   /*
   def getUniquePartitions(numBases: Long, gridDim: Int): List[(Long, Long)] = {
     val rangeLength = (numBases / (gridDim * 2)).toInt
-    val rangeStarts = (0 until (numBases / 2).toInt by rangeLength).map(2L * _ /* convert to startPos */)
-
-    /*
-    println("Ranges:")
-    rangeStarts.foreach(rangeStart => {
-      val startPos = 2 * rangeStart
-      val endPos = min(2 * rangeStart + 2 * rangeLength, numBases) - 1
-      println(startPos + ", " + endPos)
-    })
-    */
+    val rangeStarts = (0 until (numBases / 2).toInt by rangeLength).map(2L * _ ) // convert to startPos
 
     //val partitionStarts = rangeStarts.map(i => List(i).padTo(rangeStarts.length, i).zip(rangeStarts)).flatten
     var partitionStarts: List[(Long, Long)] = Nil
