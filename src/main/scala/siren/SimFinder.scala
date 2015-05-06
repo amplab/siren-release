@@ -3,13 +3,15 @@ package siren
 import it.unimi.dsi.fastutil.longs.LongList
 import it.unimi.dsi.fastutil.longs.LongArrayList
 import org.apache.spark.SparkContext
+import SparkContext._
+import org.apache.spark.SparkConf
 //import SparkContext._
 
 object SimFinder {
   def main(args : Array[String]): Unit = {
     // load arguments
     args match {
-      case Array("gridParallelAccumulator", master, seedLenStr, readLenStr, numSeedsStr, unionDistStr, outFile, gridDimStr, minClusterSizeStr) => {
+      case Array(master, sparkLocalDir, seedLenStr, readLenStr, numSeedsStr, unionDistStr, outFile, gridDimStr, minClusterSizeStr) => {
         val startRun = System.currentTimeMillis
         val params = new GridParallelSimFinderParams(master, seedLenStr, readLenStr, numSeedsStr, unionDistStr, outFile, gridDimStr, minClusterSizeStr)
         
@@ -33,7 +35,13 @@ object SimFinder {
 
         val partitionStarts = rangeStarts.map(i => List(i).padTo(rangeStarts.length, i).zip(rangeStarts)).flatten
         var ufClusters = new UnionFindL(numBases) // must use "L" here b/c we're dealing with whole genome
-        val sc = new SparkContext(getSparkDest(master), "SimFinder", "", Seq("target/scala-2.9.3/siren_2.9.3-0.0.jar"))
+        val sparkConf = new SparkConf().setMaster(getSparkDest(master))
+                                       .set("spark.driver.maxResultSize", "0")
+                                       .setAppName("SimFinder")
+                                       .setJars(Seq("target/scala-2.10/siren_2.10-0.0.jar"))
+                                       .set("spark.local.dir", sparkLocalDir)
+                                       .set("spark.akka.frameSize", "200")
+        val sc = new SparkContext(sparkConf)
         val ufAccumulator = sc.accumulator(ufClusters.asInstanceOf[UnionFindAbstract])(UnionFindAP)
 
         sc.parallelize(partitionStarts, partitionStarts.size).foreach(p => {
