@@ -1,3 +1,10 @@
+/*
+
+Author:
+    Kristal Curtis
+
+*/
+
 package siren
 
 import it.unimi.dsi.fastutil.longs.LongList
@@ -9,13 +16,11 @@ class UnionFindGrid(indexRange: (Long, Long), scanRange: (Long, Long)) extends U
   val totalRangeLen = indexRangeLen + scanRangeLen
   
   // Union Find data structures
-  //val parent = ((indexRange._1 to indexRange._2) ++ (scanRange._1 to scanRange._2)).toArray // could be long array list
   val rank = Array.fill(totalRangeLen.toInt)(0)
   val clusterSize = Array.fill(totalRangeLen.toInt)(0)
   var totalClusters = 0
   var nonTrivialClusters = List[Long]()
   var nonTrivialMembers = scala.collection.mutable.Map[Long, LongArrayList]()
-  //var firstMember = Array.fill(totalRangeLen.toInt)(0L) // could be long array list
   
   val parent = new LongArrayList(totalRangeLen.toInt)
   val firstMember = new LongArrayList(totalRangeLen.toInt)

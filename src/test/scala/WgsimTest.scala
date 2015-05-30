@@ -1,3 +1,10 @@
+/*
+
+Author:
+    Kristal Curtis
+
+*/
+
 package siren.test
 
 import org.scalatest._

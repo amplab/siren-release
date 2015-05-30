@@ -1,3 +1,10 @@
+/*
+
+Author:
+    Matei Zaharia
+
+*/
+
 package siren
 
 object HammingDistance {

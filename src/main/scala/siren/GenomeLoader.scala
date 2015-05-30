@@ -1,6 +1,14 @@
+/*
+
+Author:
+    Matei Zaharia
+    Developed as part of the SNAP project (http://snap.cs.berkeley.edu/)
+
+*/
+
 package siren
 
 object GenomeLoader {
-  //lazy val genome = FASTA.read("/disk/1/kcurtis/simFinder/hg19.fa")
-  lazy val genome = FASTA.read("/home/eecs/kcurtis/hg19.fa")
+  // TODO: fill in path to genome file
+  lazy val genome = FASTA.read("~/hg19.fa")
 }

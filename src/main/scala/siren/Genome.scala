@@ -1,3 +1,11 @@
+/*
+
+Authors:
+    Matei Zaharia & Kristal Curtis
+    Developed as part of the SNAP project (http://snap.cs.berkeley.edu/)
+
+*/
+
 package siren
 import scala.collection.mutable.HashMap
 import scala.collection.mutable.ArrayBuffer

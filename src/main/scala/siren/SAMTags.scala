@@ -1,3 +1,10 @@
+/*
+
+Author:
+    Kristal Curtis
+
+*/
+
 package siren
 
 case class SAMTag(tagName: String, tagType: String, value: String) {

@@ -1,3 +1,10 @@
+/*
+
+Author:
+    Kristal Curtis
+
+*/
+
 package siren
 
 import it.unimi.dsi.fastutil.longs.LongList

@@ -1,3 +1,11 @@
+/*
+
+Author:
+    Matei Zaharia
+    Developed as part of the SNAP project (http://snap.cs.berkeley.edu/)
+
+*/
+
 package siren
 
 import it.unimi.dsi.fastutil.ints.IntArrayList
